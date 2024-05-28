@@ -1,0 +1,27 @@
+<%= form_with(model: bookingdetail) do |form| %>
+  <% if bookingdetail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bookingdetail.errors.count, "error") %> prohibited this time for book:</h2>
+
+      <ul>
+        <% @bookingdetail.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :start_time %>
+    <%= form.number_field :start_time, class: "form-control form-control-lg"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :end_time %>
+    <%= form.number_field :end_time, class: "form-control form-control-lg"%>
+  </div>
+
+  <div class="actions form-group">
+    <%= form.submit class: "btn btn-primary btn-lg" %>
+  </div>
+<% end %>

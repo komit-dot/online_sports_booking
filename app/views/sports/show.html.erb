@@ -1,0 +1,31 @@
+<div class="col-lg-10">
+  <div class="rounded-0 card shadow">
+    <div class="card-body mt-5 mb-5">
+      <p id="notice"><%= notice %></p>
+      <p class='h1'>
+        <strong>Name:</strong>
+        <%= @sport.name %>
+      </p>
+      <p class='h1'>
+        <strong>Description:</strong>
+        <%= @sport.description %>
+      </p>
+      <p class='h1'>
+        <strong>Address:</strong>
+        <%= @sport.address %>
+      </p>
+      <p class='h1'>
+        <strong>Pincode:</strong>
+        <%= @sport.pincode %>
+      </p>
+      <p class='h1'>
+        <strong>City:</strong>
+        <%= @sport.city %>
+      </p>
+      <%= link_to 'Back', sports_path, class: "btn btn-primary" %>
+      <%= link_to 'Book Time slot for this sport', new_booking_detail_path(@bookingdetail), class: "btn btn-secondary" %>
+      <%#= link_to 'Book The Ticket for this Movie', edit_movie_path(@movie), class: "btn btn-success" %>
+
+    </div>
+  </div>
+</div>

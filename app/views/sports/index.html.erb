@@ -1,0 +1,42 @@
+<div class="bg-primary">
+  <% if user_signed_in? %>
+    <h1>Welcome Home, <%= current_user.email %></h1>
+    <div class="col-lg-10 bg-primary">
+      <p id="notice"><%= notice %></p>
+      <h1>List of Sports Facilities </h1>
+      <%=form_tag(sports_path, :method => 'get') do %>
+        <%= label_tag(:search, "You can search by name or pin")%>
+        <%= text_field_tag :search, params[:search]%>
+        <%=submit_tag("Search", :name => nil)%>
+      <% end %>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Sr. Number</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th colspan="3"><h3>Actions</h3></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @sports.each do |sport| %>
+            <tr>
+              <td><%= sport.id %><br></td>
+              <td><%= sport.name %><br></td>
+              <td><%= sport.description %>&nbsp;&nbsp;</td>
+              <td><%= link_to 'Show', sport, class: "btn btn-success" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <%= link_to 'New Sport', new_sport_path, class: "btn btn-success btn-lg" %>
+    </div>
+    <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-danger" %>
+  <% else %>
+    <h1>Home</h1>
+    <%= link_to 'Sign in', new_user_session_path %>
+  <% end %>
+  <%= form_tag sports_path, :method => 'get' do %>
+  <% end %>
+</div>

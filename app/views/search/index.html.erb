@@ -1,0 +1,30 @@
+<h1>Search#index</h1>
+<p>Find me in app/views/search/index.html.erb</p>
+
+
+<h1 class= "text-center"> <%=pluralize(@sports.count, "Result") %> </h1>
+<%# See the app/views/layouts/_navbar.html.erb %>
+<%#= render 'search/form' %>
+<div class= "container">
+  <table class="table table-light table-striped">
+    <thead>
+      <tr>
+        <th><%= sort_link(@query, :title, "Title", default_order: :asc) %></th>
+        <th><%= sort_link(@query, :body, "Blog Content") %></th>
+        <th><%= sort_link(@query, :user.name, "users") %>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sports.each do |sport| %>
+          <tr>
+            <td><%= link_to sport.name, post %></td>
+            <td><%= sport.body.truncate_words(5) %></td>
+            <td><%= link_to sport.user.name, sport.user %></td>
+            <th colspan="3"></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+  </div>

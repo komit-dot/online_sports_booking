@@ -1,0 +1,42 @@
+<%= form_with(model: @sport) do |form| %>
+  <% if @sport.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sport.errors.count, "error") %> prohibited this sport from being saved:</h2>
+
+      <ul>
+        <% @sport.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control form-control-lg"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :city %>
+    <%= form.text_field :city, class: "form-control form-control-lg"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :address %>
+    <%= form.text_field :address, class: "form-control form-control-lg"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control form-control-lg" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :pincode %>
+    <%= form.number_field :pincode, class: "form-control form-control-lg" %>
+  </div>
+
+  <div class="actions form-group">
+    <%= form.submit class: "btn btn-primary btn-lg" %>
+  </div>
+<% end %>

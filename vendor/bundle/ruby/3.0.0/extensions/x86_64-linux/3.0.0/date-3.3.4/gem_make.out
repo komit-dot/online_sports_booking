@@ -1,0 +1,21 @@
+current directory: /home/developers-computer/pramata_sport_booking/vendor/bundle/ruby/3.0.0/gems/date-3.3.4/ext/date
+/home/developers-computer/.rvm/rubies/ruby-3.0.2/bin/ruby -I /home/developers-computer/.rvm/rubies/ruby-3.0.2/lib/ruby/3.0.0 -r ./siteconf20240527-5873-26ywax.rb extconf.rb
+checking for rb_category_warn()... yes
+checking for timezone in time.h with  -Werror... yes
+checking for altzone in time.h with  -Werror... no
+creating Makefile
+
+current directory: /home/developers-computer/pramata_sport_booking/vendor/bundle/ruby/3.0.0/gems/date-3.3.4/ext/date
+make DESTDIR\= clean
+
+current directory: /home/developers-computer/pramata_sport_booking/vendor/bundle/ruby/3.0.0/gems/date-3.3.4/ext/date
+make DESTDIR\=
+compiling date_core.c
+compiling date_parse.c
+compiling date_strftime.c
+compiling date_strptime.c
+linking shared-object date_core.so
+
+current directory: /home/developers-computer/pramata_sport_booking/vendor/bundle/ruby/3.0.0/gems/date-3.3.4/ext/date
+make DESTDIR\= install
+/usr/bin/install -m 0755 date_core.so ./.gem.20240527-5873-8xqsri
